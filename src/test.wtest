@@ -1,0 +1,52 @@
+import clientes.*
+import remiseras.*
+import oficina.*
+
+describe "Test Ana Maria" {
+	test "Ana Maria inicia estable economicamente"{
+	 	assert.that(anaMaria.economicamenteEstable())
+	 	}
+	 
+	 test "Ana maria precio por km cuando esta estable"{
+	 	assert.equals(30, anaMaria.precioPorKm())
+	 }
+	 
+	 test "Ana maria cambiar situacion economica"{
+	 	anaMaria.cambiarSituacionEconomica()
+	 	assert.notThat(anaMaria.economicamenteEstable())
+	 }
+	 
+	 test "Ana maria precio kilometro not estable"{
+	 	anaMaria.cambiarSituacionEconomica()
+	 	assert.equals(25, anaMaria.precioPorKm())
+	 }	 		
+	
+}
+
+describe "Test Teresa"{
+	test "teresa precio Km a 22"{
+		assert.equals(22, teresa.precioPorKm())
+	}	
+}
+
+describe "Test melina"{
+	test "Melina trabaja para"{
+		melina.trabajaPara(ludmila)
+		assert.equals(15, melina.precioPorKm())
+	}
+}
+
+describe "Test Roxana"{
+	test "Roxana 10kms a ludmila"{
+		roxana.precioViaje(ludmila, 10)
+		assert.equals(180, roxana.precioViaje(ludmila, 10))
+	}
+		
+}
+
+describe "Test Lucia"{
+	test "no se puede reemplazar a si mismo"{
+		assert.throwsExceptionWithMessage("no se puede reemplazar a si mismo", {lucia.reemplazaA(lucia)})
+	}
+	
+}

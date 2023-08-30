@@ -3,10 +3,10 @@ object ludmila {
 }
 
 object anaMaria {
-	var economicamenteEstable=true
+	var economicamenteEstable = true
 	
-	method economicamenteEstable(nuevoEstado){
-		economicamenteEstable = nuevoEstado
+	method cambiarSituacionEconomica(){
+		economicamenteEstable = !economicamenteEstable
 	}
 	method economicamenteEstable() = economicamenteEstable 
 		

@@ -23,9 +23,7 @@ object oficina {
 	}
 	
 	method intercambiarRemiseras(){
-		const recordarPrimera = primeraOpcion
-		primeraOpcion = segundaOpcion
-		segundaOpcion = recordarPrimera
+		self.asignarRemiseras(primeraOpcion, segundaOpcion)
 	}
 	
     method  remiseraElegidaParaViaje(cliente, km){
